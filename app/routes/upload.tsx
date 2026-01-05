@@ -2,8 +2,11 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import FileUploader from "../components/FileUploader";
 import Toast from "../components/Toast";
+import { usePuterStore } from "~/lib/puter";
+import { convertPdfToImage } from "~/lib/pdf2img";
 
 export default function Upload() {
+  const { auth, isLoading, fs, ai, kv } = usePuterStore();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -14,25 +17,52 @@ export default function Upload() {
     if (file) setError(null);
   };
 
+  const handleAnalyze = async ({
+    companyName,
+    jobTitle,
+    jobDescription,
+    file,
+  }: {
+    companyName: string;
+    jobTitle: string;
+    jobDescription: string;
+    file: File;
+  }) => {
+    setIsProcessing(true);
+    setStatusText("Uploading the file...");
+    const uploadedFile = await fs.upload([file]);
+    if (!uploadedFile) return setStatusText("Error uploading file");
+    setStatusText("Converting to image...");
+
+    const imageBlob = await convertPdfToImage(file);
+    const imageFile = new File([imageBlob], "resume.png", {
+      type: "image/png",
+    });
+
+    setStatusText("Extracting text from image...");
+    const text = await ai.img2txt(imageFile);
+    if (!text) return setStatusText("Error extracting text");
+
+    setStatusText("Analyzing resume...");
+    // Further processing...
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget.closest("form");
     if (!form) return;
+
+    const formData = new FormData(form);
+    const companyName = formData.get("company-name") as string;
+    const jobTitle = formData.get("job-title") as string;
+    const jobDescription = formData.get("job-description") as string;
 
     if (!file) {
       setError("Please upload a resume to continue");
       return;
     }
 
-    const formData = new FormData(form);
-    const companyName = formData.get("company-name");
-    const jobTitle = formData.get("job-title");
-    const jobDescription = formData.get("job-description");
-
-    setIsProcessing(true);
-    setStatusText("Analyzing your resume...");
-
-    console.log({ companyName, jobTitle, jobDescription, file });
+    handleAnalyze({ companyName, jobTitle, jobDescription, file });
   };
 
   return (
