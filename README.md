@@ -302,9 +302,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 **Contact**
 
-**Your Name** - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
+**Your Name** - [@mahmudbuilds](https://twitter.com/mahmudbuilds) - your.email@example.com
 
-**Project Link**: [https://github.com/yourusername/ai-resume-analyzer](https://github.com/yourusername/ai-resume-analyzer)
+**Project Link**: [https://github.com/mahx-code/Resumind](https://github.com/mahx-code/Resumind)
 
 ---
 
