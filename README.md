@@ -1,4 +1,4 @@
-# 📄 **AI Resume Analyzer - ResuMind**
+# 📄 **ResuMind: AI-Powered Resume Intelligence**
 
 <div align="center">
 
@@ -7,311 +7,78 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-4.1.13-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-**An intelligent, AI-powered resume analyzer that instantly decodes resumes to provide actionable insights, ATS compatibility scores, and optimization recommendations for job seekers and recruiters.**
+**Stop guessing, start getting hired. ResuMind decodes the "black box" of ATS systems to give you a competitive edge.**
 
-
+[Live Demo](#) · [Report Bug](https://github.com/mahx-code/Resumind/issues) · [Request Feature](https://github.com/mahx-code/Resumind/issues)
 
 </div>
 
 ---
 
-## 🌟 **Overview**
+## 📖 **Overview**
 
-**ResuMind** is a modern, full-stack web application that leverages AI to analyze resumes and provide comprehensive feedback. Whether you're a job seeker looking to optimize your resume for Applicant Tracking Systems (ATS) or a recruiter evaluating candidates, ResuMind delivers instant, actionable insights with a beautiful, intuitive interface.
+**ResuMind** is a high-performance, AI-driven platform designed to bridge the gap between job seekers and recruitment algorithms. By leveraging modern LLMs and intelligent parsing, ResuMind provides an "insider's view" of how your resume is perceived by both robots (ATS) and humans.
 
-### **Why ResuMind?**
+### **The Problem**
+75% of resumes are rejected by Applicant Tracking Systems before a human even sees them due to formatting errors or keyword mismatches.
 
-- 🎯 **ATS Optimization**: Get real-time scores showing how well your resume performs with Applicant Tracking Systems
-- 🤖 **AI-Powered Analysis**: Intelligent parsing and evaluation of resume content
-- 📊 **Visual Insights**: Beautiful score visualizations with gauges, circles, and badges
-- 💾 **Resume Management**: Track multiple resumes and their performance over time
-- 🔒 **Secure & Private**: Built with Puter.js for secure authentication and data storage
-- ⚡ **Lightning Fast**: Server-side rendering with React Router for optimal performance
+### **The Solution**
+ResuMind analyzes your document's structure, keyword density, and formatting to provide a **real-time compatibility score** and actionable steps to optimize it for modern hiring workflows.
 
 ---
 
-## ✨ **Features**
+## 🚀 **Key Features**
 
-### **Core Functionality**
+### **1. Intelligent Parsing & Analysis**
+* **Deep PDF Extraction:** Uses `pdfjs-dist` to handle complex multi-column layouts and extract text accurately.
+* **ATS Compatibility Scoring:** A proprietary scoring algorithm (0-100) that mimics modern recruitment software.
+* **Keyword Gap Analysis:** Identifies missing industry-standard skills based on your target role.
 
-- **📤 Smart Resume Upload**
-  - Drag-and-drop interface with React Dropzone
-  - PDF parsing with pdfjs-dist
-  - Instant file validation and preview
+### **2. Dynamic Visualizations**
+* **Interactive Gauges:** Real-time animated feedback on your resume’s health.
+* **Section Breakdown:** Granular scoring for Contact Info, Experience, Education, and Skills.
+* **Actionable Tips:** Not just scores, but specific "Fix-it" instructions for your bullet points.
 
-- **🎯 ATS Score Analysis**
-  - Comprehensive ATS compatibility scoring (0-100)
-  - Color-coded feedback (Red/Yellow/Green)
-  - Specific improvement suggestions
-  - Impact assessment on job search success
-
-- **📈 Visual Score Displays**
-  - **Score Gauge**: Animated arc gauge with percentage display
-  - **Score Circle**: Circular progress indicator
-  - **Score Badge**: Quick-glance rating badges
-- **📋 Detailed Resume Breakdown**
-  - Section-by-section analysis
-  - Strengths and weaknesses identification
-  - Actionable improvement tips
-  - Professional summary generation
-
-- **🗂️ Resume Dashboard**
-  - View all analyzed resumes in one place
-  - Track scores and improvements over time
-  - Quick access to detailed reports
-  - Resume comparison capabilities
-
-### **Technical Features**
-
-- ⚡ **Server-Side Rendering (SSR)** for optimal performance and SEO
-- 🔥 **Hot Module Replacement (HMR)** for rapid development
-- 🎨 **Modern UI/UX** with TailwindCSS and custom animations
-- � **Fully Responsive** design for all devices
-- 🔐 **Secure Authentication** with Puter.js
-- � **Cloud Storage** for resume data persistence
-- 🎭 **Type-Safe** with TypeScript throughout
-- 🧩 **Component-Based Architecture** for maintainability
+### **3. Privacy-First Experience**
+* **Puter.js Integration:** Secure, decentralized authentication and cloud storage.
+* **Local Processing:** PDF text extraction happens in the browser to ensure maximum data privacy.
 
 ---
 
 ## 🛠️ **Tech Stack**
 
-### **Frontend**
-
-- **React 19.2.3** - Modern React with latest features
-- **React Router 7.10.1** - Full-stack routing with SSR
-- **TypeScript 5.9.2** - Type safety and better DX
-- **TailwindCSS 4.1.13** - Utility-first styling
-- **Lucide React** - Beautiful, consistent icons
-- **React Dropzone** - Elegant file upload UX
-
-### **Backend & Services**
-
-- **React Router Server** - Node.js server with SSR
-- **Puter.js** - Authentication and cloud storage
-- **PDF.js** - Client-side PDF parsing
-- **Zustand** - Lightweight state management
-
-### **Development Tools**
-
-- **Vite 7.1.7** - Next-generation build tool
-- **Docker** - Containerization for deployment
-- **ESLint & Prettier** - Code quality and formatting
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, TypeScript, TailwindCSS 4, Lucide Icons |
+| **Routing/SSR**| React Router 7 (Framework Mode) |
+| **State** | Zustand (Global) & React Hooks (Local) |
+| **Parsing** | PDF.js (Client-side extraction) |
+| **Backend/Auth** | Puter.js (Auth & Cloud KV Store) |
+| **Deployment** | Docker, Vite, Node.js |
 
 ---
 
-## 🚀 **Getting Started**
+## ⚙️ **How It Works**
 
-### **Prerequisites**
 
-- Node.js 18+ and npm/pnpm/yarn
-- Git
 
-### **Installation**
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/yourusername/ai-resume-analyzer.git
-   cd ai-resume-analyzer
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-
-   Navigate to `http://localhost:5173` and start analyzing resumes!
+1.  **Ingestion:** The user uploads a PDF. `react-dropzone` handles the UI, while `pdfjs-dist` extracts the raw text.
+2.  **Analysis:** The text is processed via our AI logic to identify entities (dates, job titles, skills).
+3.  **Scoring:** The system runs a multi-pass check against common ATS rejection triggers (poor formatting, missing sections, low keyword density).
+4.  **Reporting:** Results are visualized through custom-built React components like `ScoreGauge` and `Details`.
 
 ---
 
-## 📦 **Building for Production**
+## 📦 **Installation & Setup**
 
-### **Standard Build**
+### **Local Development**
 
 ```bash
-# Create optimized production build
-npm run build
+# 1. Clone the repository
+git clone [https://github.com/mahx-code/Resumind.git](https://github.com/mahx-code/Resumind.git)
 
-# Start production server
-npm start
-```
+# 2. Install dependencies
+npm install
 
-The build outputs to:
-
-```
-build/
-├── client/    # Static assets (CSS, JS, images)
-└── server/    # Server-side code
-```
-
-### **Docker Deployment**
-
-```bash
-# Build Docker image
-docker build -t resumind-app .
-
-# Run container
-docker run -p 3000:3000 resumind-app
-```
-
-**Deploy to:**
-
-- AWS ECS / Fargate
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-- Vercel
-- Netlify
-
----
-
-## 📁 **Project Structure**
-
-```
-ai-resume-analyzer/
-├── app/
-│   ├── components/          # React components
-│   │   ├── ATS.tsx         # ATS score display
-│   │   ├── Details.tsx     # Resume details view
-│   │   ├── FileUploader.tsx # Upload interface
-│   │   ├── ScoreGauge.tsx  # Gauge visualization
-│   │   ├── ScoreCircle.tsx # Circle visualization
-│   │   ├── ScoreBadge.tsx  # Badge component
-│   │   ├── Summary.tsx     # Resume summary
-│   │   └── ...
-│   ├── routes/             # Route handlers
-│   │   ├── home.tsx        # Dashboard
-│   │   ├── upload.tsx      # Upload page
-│   │   ├── resume.tsx      # Resume detail view
-│   │   └── auth.tsx        # Authentication
-│   ├── lib/                # Utilities
-│   │   ├── puter.ts        # Puter.js integration
-│   │   └── utils.ts        # Helper functions
-│   ├── app.css             # Global styles
-│   └── root.tsx            # App root
-├── public/                 # Static assets
-│   ├── icons/             # SVG icons
-│   └── images/            # Images and backgrounds
-├── types/                 # TypeScript definitions
-├── Dockerfile             # Container configuration
-└── package.json           # Dependencies
-```
-
----
-
-## 🎨 **Key Components**
-
-### **ATS Score Component**
-
-Displays comprehensive ATS compatibility analysis with:
-
-- Dynamic color-coded scoring (0-100)
-- Visual status indicators
-- Specific improvement suggestions
-- Impact assessment on job search
-
-### **Score Visualizations**
-
-Three distinct visualization components:
-
-- **Gauge**: Arc-style progress indicator
-- **Circle**: Circular progress ring
-- **Badge**: Quick-glance score badge
-
-### **File Uploader**
-
-Elegant drag-and-drop interface with:
-
-- PDF file validation
-- Visual upload feedback
-- Error handling
-- Preview capabilities
-
----
-
-## 🔐 **Authentication & Storage**
-
-ResuMind uses **Puter.js** for:
-
-- 🔒 Secure user authentication
-- 💾 Cloud-based key-value storage
-- 🔑 Session management
-- 🌐 Cross-device synchronization
-
-All resume data is securely stored and associated with authenticated users.
-
----
-
-## 🎯 **Use Cases**
-
-### **For Job Seekers**
-
-- ✅ Optimize resumes for ATS systems
-- ✅ Get instant feedback on resume quality
-- ✅ Track improvements over multiple versions
-- ✅ Increase interview callback rates
-
-### **For Recruiters**
-
-- ✅ Quickly evaluate candidate resumes
-- ✅ Standardize resume assessment
-- ✅ Identify top candidates faster
-- ✅ Provide feedback to applicants
-
----
-
-## 🤝 **Contributing**
-
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 **Acknowledgments**
-
-- **React Router Team** - For the amazing full-stack framework
-- **Puter.js** - For secure authentication and storage
-- **PDF.js** - For reliable PDF parsing
-- **Lucide** - For beautiful icons
-- **TailwindCSS** - For the utility-first CSS framework
-
----
-
-## 📧 **Contact**
-
-**Your Name** - [@mahmudbuilds](https://twitter.com/mahmudbuilds) - mahxgithub@gmail.com
-
-**Project Link**: [https://github.com/mahx-code/Resumind](https://github.com/mahx-code/Resumind)
-
----
-
-<div align="center">
-
-**Built with ❤️ using React Router, TypeScript, and TailwindCSS**
-
-⭐ Star this repo if you find it helpful!
-
-</div>
+# 3. Start the development server
+npm run dev
